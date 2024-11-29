@@ -23,11 +23,11 @@ mov [N],eax
 ; ------ Организация цикла
 mov ecx,[N]
 label:
-push ecx ; добавление значения ecx в стек
+
 sub ecx,1
 mov [N],ecx
 mov eax,[N]
 call iprintLF
-pop ecx ; извлечение значения ecx из стека
+
 loop label
 call quit
