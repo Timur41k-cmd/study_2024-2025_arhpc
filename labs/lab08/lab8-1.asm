@@ -20,10 +20,11 @@ mov [N],eax
 ; ------ Организация цикла
 mov ecx,[N] 
 label:
-; Счетчик цикла, `ecx=N`
+sub ecx,1
 mov [N],ecx
-mov eax,[N]
-call iprintLF ; Вывод значения `N`
+moveax,[N]
+call iprintLF
+
 loop label ; `ecx=ecx-1` и если `ecx` не '0'
 ; переход на `label`
 call quit
