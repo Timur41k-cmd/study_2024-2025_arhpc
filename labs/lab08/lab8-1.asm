@@ -22,7 +22,7 @@ mov ecx,[N]
 label:
 sub ecx,1
 mov [N],ecx
-moveax,[N]
+mov eax,[N]
 call iprintLF
 
 loop label ; `ecx=ecx-1` и если `ecx` не '0'
