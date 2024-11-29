@@ -16,9 +16,10 @@ call sread
 ; ----- mov eax,N
 call atoi
 mov [N],eax
-Преобразование 'N' из символа в число
+
 ; ------ Организация цикла
-mov ecx,[N] label:
+mov ecx,[N] 
+label:
 ; Счетчик цикла, `ecx=N`
 mov [N],ecx
 mov eax,[N]
