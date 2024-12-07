@@ -1,6 +1,6 @@
 %include 'in_out.asm'
 SECTION .data
-filename db 'readme.txt', 0h
+filename db 'readme-1.txt', 0h
 msg db 'Введите строку для записи в файл: ', 0h
 SECTION .bss
 contents resb 255
