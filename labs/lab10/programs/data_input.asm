@@ -2,7 +2,7 @@
 SECTION .data
 msg1 db 'Как Вас зовут?', 0h
 filename db 'name.txt', 0h
-msg2 db 'Меня зовут', 0h
+msg2 db 'Меня зовут ', 0h
 SECTION .bss
 name resb 255
 SECTION .text
