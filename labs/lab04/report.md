@@ -87,10 +87,12 @@ header-includes:
 
 Описываются проведённые действия, в качестве иллюстрации даётся ссылка на иллюстрацию (рис. [-@fig:001]).
 
-![Создание файла hello.asm](screenshots/1созданиефайла.png){#fig:001 width=70%}
+![Создание файла hello.asm](screenshots/1созданиефайла.png){
+  #fig:001 width=70%}
 Создаем нужный каталог lab04/programs и затем создаем файл hello.asm
 
-![Создание файла hello.asm](screenshots/2вставляемкод.png){#fig:001 width=70%}
+![Создание файла hello.asm](screenshots/2вставляемкод.png){
+  #fig:002 width=70%}
 
 Далее с помощью Midnight commander открываем данный файл в режиме редактирования, и вставляем код для вывода Hello World
 # Выводы
