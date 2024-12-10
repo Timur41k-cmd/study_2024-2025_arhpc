@@ -1,7 +1,7 @@
 %include 'in_out.asm'
 section .data
 msg1 db 'Введите B: ',0h
-msg2 db "Наибольшее число: ",0h
+msg2 db 'Наибольшее число: ',0h
 A dd '20'
 C dd '50'
 section .bss
@@ -10,13 +10,13 @@ B resb 10
 section .text
 global _start
 _start:
-; ---------- mov eax,msg1
+; ---------- 
+mov eax,msg1
 call sprint
 ; ---------- Ввод 'B'
 mov ecx,B
 mov edx,10
 call sread
-Вывод сообщения 'Введите B: '
 ; ---------- Преобразование 'B' из символа в число
 mov eax,B
 call atoi ; Вызов подпрограммы перевода символа в число
