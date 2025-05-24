@@ -1,0 +1,119 @@
+<h2 id="запуск-linux-в-виртуальной-машине">1. Запуск Linux в виртуальной
+машине</h2>
+<ul>
+<li><p>Используется программа <strong>VirtualBox 4.3</strong><br />
+<a
+href="https://www.virtualbox.org/wiki/Download_Old_Builds_4_3">Скачать
+VirtualBox 4.3</a></p></li>
+<li><p>Рекомендуемые образы Linux:</p>
+<ul>
+<li><strong>bioLinux (на основе Ubuntu 12.04, 64-бит)</strong> –
+<em>предназначен для биоинформатиков</em></li>
+<li>Альтернативы:
+<ul>
+<li>Ubuntu 12.04 (1.3 GB, 64-бит)</li>
+<li>Ubuntu 12.04 (1.2 GB, 32-бит)</li>
+</ul></li>
+</ul></li>
+<li><p>Данные для входа:</p>
+<ul>
+<li>Пользователь: <code>bi</code></li>
+<li>Пароль: <code>12345678</code></li>
+</ul></li>
+<li><p>Файлы, созданные в Linux, не видны в Windows и наоборот. Обмен
+файлами возможен через:</p></li>
+<li><p>Email</p></li>
+<li><p>Облачные хранилища</p></li>
+<li><p>Настройку общих папок в VirtualBox (опционально)</p></li>
+</ul>
+<hr />
+<h2 id="создание-документа-в-libreofficeopenoffice">2. Создание
+документа в LibreOffice/OpenOffice</h2>
+<p><strong>Цель:</strong> Создать файл с единственной строкой:</p>
+<pre><code>Hello, Linux!</code></pre>
+<ul>
+<li><p><strong>Шрифт:</strong> <code>FreeMono</code><br />
+(<em>если отсутствует, используйте <code>Arial</code> или
+<code>Times New Roman</code></em>)</p></li>
+<li><p><strong>Сохранение:</strong></p>
+<ul>
+<li>Вариант 1: <code>Microsoft Word 2003 XML (*.xml)</code></li>
+<li>Вариант 2: <code>OpenDocument Flat XML (*.fodt)</code></li>
+</ul></li>
+</ul>
+<hr />
+<h2 id="просмотр-содержимого-директории">3. Просмотр содержимого
+директории</h2>
+<p><strong>Условие:</strong> Находясь в <code>/home/bi/Documents</code>,
+вывести содержимое <code>/home/bi/Downloads</code>.</p>
+<p><strong>Правильные команды:</strong></p>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> ../Downloads</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> /home/bi/Downloads</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> ~/Downloads</span></code></pre></div>
+<hr />
+<h2 id="что-произойдёт-при-запуске-firefox-а-затем-exit">4. Что
+произойдёт при запуске <code>firefox</code>, а затем
+<code>exit</code></h2>
+<ul>
+<li><p>Если выполнить:</p>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">firefox</span></span></code></pre></div>
+<p>— терминал <strong>“замрёт” до завершения Firefox</strong> (он
+запущен в <strong>переднем фоне</strong>).</p></li>
+<li><p>Команду <code>exit</code> <strong>нельзя ввести</strong>, пока
+Firefox не завершится.</p></li>
+<li><p>Если запускать так:</p>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">firefox</span> <span class="kw">&amp;</span></span></code></pre></div>
+<p>— Firefox запустится в <strong>фоне</strong>, и <code>exit</code>
+закроет терминал, но Firefox останется работать.</p></li>
+</ul>
+<hr />
+<h2 id="stderr-и-пайпы">5. stderr и пайпы (<code>|</code>)</h2>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">command1</span> <span class="kw">|</span> <span class="ex">command2</span></span></code></pre></div>
+<ul>
+<li>По умолчанию <strong>через pipe (<code>|</code>) передаётся только
+stdout</strong>.</li>
+<li><strong>stderr НЕ передаётся</strong>, а выводится напрямую в
+терминал.</li>
+</ul>
+<hr />
+<h2 id="что-скачивает-команда-wget--r--l-1--a-jpg-url">6. Что скачивает
+команда <code>wget -r -l 1 -A jpg &lt;URL&gt;</code></h2>
+<p><strong>Команда:</strong></p>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> <span class="at">-r</span> <span class="at">-l</span> 1 <span class="at">-A</span> jpg <span class="op">&lt;</span>URL<span class="op">&gt;</span></span></code></pre></div>
+<p><strong>Расшифровка:</strong></p>
+<ul>
+<li><code>-r</code> — рекурсивная загрузка</li>
+<li><code>-l 1</code> — уровень рекурсии 1 (только ссылки первого
+уровня)</li>
+<li><code>-A jpg</code> — скачиваются <strong>только файлы
+.jpg</strong></li>
+</ul>
+<p><strong>На практике:</strong> - Скачиваются: - HTML-страницы,
+необходимые для перехода по ссылкам (временно или как часть структуры) -
+Только <code>.jpg</code>-файлы сохраняются как результат</p>
+<hr />
+<h2 id="grep-world-text.txt-что-найдёт">7. grep “world” text.txt — что
+найдёт?</h2>
+<div class="sourceCode" id="cb7"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span> <span class="st">&quot;world&quot;</span> text.txt</span></code></pre></div>
+<ul>
+<li>Ищет строки, содержащие <strong>ровно <code>world</code></strong>
+(регистр имеет значение).</li>
+<li>Найдёт строки вроде:
+<ul>
+<li><code>hello world</code></li>
+<li><code>the world is round</code></li>
+<li><code>myworld</code></li>
+</ul></li>
+<li>Не найдёт:
+<ul>
+<li><code>World</code></li>
+<li><code>WORLD</code></li>
+<li><code>World!</code> (если регистр важен) ::: {#refs} :::</li>
+</ul></li>
+</ul>
